@@ -1,5 +1,18 @@
 package bloom
 
+/*
+A Bloom filter is a space-efficient probabilistic data structure,
+conceived by Burton Howard Bloom in 1970, that is used to test
+whether an element is a member of a set.
+For this pkg: The hash function selects a combination of sha256
+and murmur3. After testing, they have a lower collision rate than
+other hash functions such as CRC or MD5. I also found that Google
+later proposed a better hash function, cityhash, but did not find
+a mature version of go implementation, maybe there will be in the
+future.
+@Feb 25,2020
+*/
+
 import (
 	"crypto/sha256"
 	"github.com/spaolacci/murmur3"
